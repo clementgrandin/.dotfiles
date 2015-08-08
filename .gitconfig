@@ -1,0 +1,16 @@
+[user]
+	name = clementgrandin
+	email = clement.grandin@gmail.com
+
+;Utiliser vim pour les commits
+[core]
+	    editor = vim
+
+;Utiliser vim pour faire les diff
+[merge]
+	tool=vimdiff
+
+;Montrer les fichiers dans les répertoires avec git status
+[status]
+	showUntrackedFiles=all
+
