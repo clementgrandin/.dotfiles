@@ -53,3 +53,17 @@ set nu
 "  source /etc/vim/vimrc.local
 "endif
 
+"Applique instantanément les modifications apportées à .vimrc après sauvegarde
+if has("autocmd")
+	    autocmd! bufwritepost .vimrc source ~/.vimrc
+endif
+
+"Initialisation de pathogen
+execute pathogen#infect()
+
+"NerdTree
+"Défini Ctrl+n comme commande d'ouverture de NerdTree
+map <C-n> :NERDTreeToggle<CR>	
+"Ouvre automatiquement NerdTree si Vim est ouvert sans spécifier de fichier
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
